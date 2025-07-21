@@ -1,69 +1,35 @@
 {
-  "version": 2,
-  "name": "png-digital-id-system",
-  "buildCommand": "bun run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
+  "buildCommand": "bun run build",
   "installCommand": "bun install",
-  "regions": ["sin1", "syd1"],
+  "devCommand": "bun run dev",
+  "outputDirectory": ".next",
   "functions": {
-    "src/app/**/*.tsx": {
-      "runtime": "nodejs18.x",
-      "maxDuration": 30
-    },
-    "src/app/api/**/*.ts": {
-      "runtime": "nodejs18.x",
+    "src/app/api/**": {
       "maxDuration": 60
     }
   },
+  "regions": ["syd1", "sin1"],
+  "env": {
+    "NEXT_PUBLIC_BASE_URL": "@next_public_base_url"
+  },
   "headers": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
-      ]
-    },
-    {
-      "source": "/sw.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
-      ]
-    }
-  ],
-  "rewrites": [
-    {
       "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
     }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "NEXT_TELEMETRY_DISABLED": "1"
-  }
+  ]
 }
