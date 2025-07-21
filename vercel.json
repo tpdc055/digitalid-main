@@ -8,11 +8,11 @@
   "regions": ["sin1", "syd1"],
   "functions": {
     "src/app/**/*.tsx": {
-      "runtime": "nodejs20.x",
+      "runtime": "nodejs18.x",
       "maxDuration": 30
     },
     "src/app/api/**/*.ts": {
-      "runtime": "nodejs20.x",
+      "runtime": "nodejs18.x",
       "maxDuration": 60
     }
   },
