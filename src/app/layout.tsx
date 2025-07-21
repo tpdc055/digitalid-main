@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://same-e4r4payzdi-latest.netlify.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "PNG Government Portal - Enhanced Security Framework",
     description: "Secure digital government services with end-to-end encryption and compliance monitoring",
-    url: 'https://same-e4r4payzdi-latest.netlify.app',
+    url: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
     siteName: 'PNG Government Portal',
     images: [
       {
