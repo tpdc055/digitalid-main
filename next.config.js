@@ -37,10 +37,9 @@ const nextConfig = {
       },
     ],
   },
-  // Optimize for Vercel deployment
+  // Performance optimization
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
-  output: 'standalone',
 };
 module.exports = nextConfig;
