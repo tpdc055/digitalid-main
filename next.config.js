@@ -6,7 +6,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  allowedDevOrigins: ["*.preview.same-app.com"],
   images: {
     unoptimized: true,
     domains: [
@@ -38,6 +37,10 @@ const nextConfig = {
       },
     ],
   },
+  // Optimize for Vercel deployment
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+  output: 'standalone',
 };
-
 module.exports = nextConfig;
