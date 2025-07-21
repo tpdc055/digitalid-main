@@ -1,0 +1,122 @@
+{
+  "expo": {
+    "name": "PNG Government Portal",
+    "slug": "png-government-portal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#3b82f6"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "pg.gov.portal",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "This app uses Face ID for secure biometric authentication",
+        "NSCameraUsageDescription": "Camera access is required for document scanning and face verification",
+        "NSMicrophoneUsageDescription": "Microphone access is required for voice authentication",
+        "NSLocationWhenInUseUsageDescription": "Location is used for service delivery and security purposes",
+        "NSPhotoLibraryUsageDescription": "Photo library access is needed to upload documents"
+      },
+      "associatedDomains": [
+        "applinks:same-e4r4payzdi-latest.netlify.app"
+      ],
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#3b82f6"
+      },
+      "package": "pg.gov.portal",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "USE_FINGERPRINT",
+        "USE_BIOMETRIC",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "WAKE_LOCK"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "https",
+              "host": "same-e4r4payzdi-latest.netlify.app"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-local-authentication",
+      "expo-camera",
+      "expo-av",
+      "expo-location",
+      "expo-document-picker",
+      "expo-file-system",
+      "expo-notifications",
+      "expo-background-fetch",
+      "expo-task-manager",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#3b82f6",
+          "sounds": [
+            "./assets/notification-sound.wav"
+          ]
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow PNG Government Portal to use Face ID for secure authentication"
+        }
+      ]
+    ],
+    "scheme": "png-gov-portal",
+    "extra": {
+      "eas": {
+        "projectId": "png-government-portal"
+      }
+    },
+    "owner": "png-government",
+    "privacy": "public",
+    "description": "Official Papua New Guinea Government Portal mobile application for secure digital government services with biometric authentication and end-to-end encryption.",
+    "githubUrl": "https://github.com/png-government/enhanced-security-framework",
+    "primaryColor": "#3b82f6",
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/png-government-portal"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}
