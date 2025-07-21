@@ -41,8 +41,6 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
-  // Remove invalid option that was causing JavaScript errors
   output: 'standalone',
 };
-
 module.exports = nextConfig;
